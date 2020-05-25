@@ -29,7 +29,7 @@ class pingTest:
     def ping(self,ipadr):
         proc = subprocess.run("ping " + ipadr, shell=True, stdout=PIPE, stderr=PIPE, text=True)
         res = proc.stdout
-        #print('STDOUT: {}'.format(res))
+        print('STDOUT: {}'.format(res))
         resList = res.split("\n")
         #print(len(resList))
         #cnt = 1
@@ -66,7 +66,7 @@ class pingTest:
     def getTime(self,str):
         result = 0
         r = str.split(" ")
-        if len(r) > 2:
+        if len(r) >=5:
             t=r[5]
             t=t.replace("=","")
             t=t.replace("ms","")
@@ -151,6 +151,4 @@ if __name__ == "__main__":
     
     pt = pingTest()
     pt.main()
-    
-
     
