@@ -53,7 +53,7 @@ class pingTest:
             f.writelines(mes+"\n")
         f.close()
 
-        f = open("all.csv",'a')
+        f = open("all_" + datetime.datetime.now().strftime('%Y%m%d') +".csv",'a')
         for rt in resTime:
             mes=ip+","+ipadr + ","+ t +","+str(rt)
             print(mes)
@@ -151,4 +151,6 @@ if __name__ == "__main__":
     
     pt = pingTest()
     pt.main()
+    
+
     
